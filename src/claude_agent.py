@@ -68,7 +68,7 @@ class ClaudeAgent:
         # Configure Claude with full permissions
         options = ClaudeAgentOptions(
             allowed_tools=["Read", "Write", "Edit", "Bash", "Glob", "Grep", "WebFetch", "WebSearch"],
-            working_directory=self.working_dir
+            cwd=self.working_dir
         )
 
         try:
