@@ -1,0 +1,27 @@
+#!/bin/bash
+# Main run script for DisClaude
+
+set -e
+
+# Change to project directory
+cd "$(dirname "$0")"
+
+case "${1:-run}" in
+    run)
+        python3 src/main.py
+        ;;
+    test)
+        pytest -v
+        ;;
+    lint)
+        flake8 src/ --max-line-length=120
+        ;;
+    install)
+        pip install -r requirements.txt
+        npm install -g @anthropic-ai/claude-code
+        ;;
+    *)
+        echo "Usage: ./run [run|test|lint|install]"
+        exit 1
+        ;;
+esac
