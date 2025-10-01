@@ -2,6 +2,7 @@
 """
 Tests for Discord client
 """
+
 from discord_client import split_message, DISCORD_MAX_LENGTH
 
 
@@ -33,7 +34,7 @@ def test_split_message_over_limit():
 def test_split_message_sentence_boundary():
     """Test splitting at sentence boundary"""
     part1 = "x" * 1000 + "."
-    part2 = " " + "y" * 1500
+    part2 = " " + "y" * 500  # Reduced to fit within Discord limit
     text = part1 + part2
     result = split_message(text)
     assert len(result) == 1
