@@ -102,4 +102,4 @@ Code follows strict engineering standards:
 
 ## License
 
-Private repository - not for public distribution.
+This project is licensed under [CC BY-NC 4.0](https://darren-static.waft.dev/license) - free to use and modify, but no commercial use without permission.
